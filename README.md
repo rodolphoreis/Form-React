@@ -13,7 +13,7 @@ Conclusão:
 Mais do que um formulário, é uma abordagem moderna para coleta de dados. Experimente e sinta a diferença!
 ## Stack utilizada
 
-**Front-end:** React, TailwindCSS
+**Front-end:** React, sweetalert2
 
 **Back-end:** Node (em criação)
 
