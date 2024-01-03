@@ -1,0 +1,15 @@
+.Formulario {
+  width: 600px;
+  height: 700px;
+  margin: 20px auto;
+}
+label {
+  color: #1c799b;
+}
+
+@media (max-width: 400px) {
+  .Formulario {
+    width: 390px;
+    margin: 7px auto 0px auto;
+  }
+}

@@ -1,0 +1,168 @@
+.alert {
+  border-radius: 30px;
+}
+.img_topo {
+  margin: auto;
+  width: 600px;
+}
+.img_topo img {
+  width: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.img_rodape img {
+  width: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.logo img {
+  width: 200px;
+}
+.form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+}
+h1 {
+  text-align: center;
+  color: #1c799b;
+  font-size: 25px;
+}
+label span {
+  display: block;
+}
+input {
+  width: 295px;
+  height: 28px;
+  border: 1px solid #1c799b;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+.input_nome {
+  width: 565px;
+  height: 28px;
+  border: 1px solid #1c799b;
+  border-radius: 6px;
+}
+textarea {
+  width: 565px;
+  height: 170px;
+  border: 1px solid #1c799b;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+.Div_Email_Age {
+  display: flex;
+  justify-content: space-between;
+}
+.Div_Tel_Dev {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.dev {
+  width: 200px;
+  height: 28px;
+  color: #1c799b;
+  border-radius: 6px;
+  padding: 0 5px;
+}
+.age {
+  width: 200px;
+  color: #1c799b;
+  border-radius: 6px;
+  padding: 0 5px;
+}
+.age i {
+  color: #1c799b;
+}
+.morada {
+  width: 565px;
+  height: 28px;
+}
+select {
+  color: #1c799b;
+  border: 1px solid #1c799b;
+  border-radius: 6px;
+}
+.Div_Botoes {
+  display: flex;
+  width: 600px;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+button {
+  background: #1c799b;
+  color: #fff;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  width: 106px;
+  height: 40px;
+  text-shadow: none;
+}
+button:hover {
+  background: #0180e0;
+  color: #fff;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  text-shadow: none;
+}
+
+@media (max-width: 400px) {
+  .logo img {
+    width: 134px;
+    align-items: center;
+  }
+  h1 {
+    font-size: 18px;
+    margin: 25px;
+  }
+  label {
+    font-size: 14px;
+  }
+  .img_topo {
+    margin: auto;
+    width: 390px;
+  }
+  .img_topo img {
+    width: 390px;
+  }
+  .input_nome {
+    width: 355px;
+  }
+  .input_email {
+    width: 210px;
+  }
+  .age {
+    width: 124px;
+  }
+  .morada {
+    width: 355px;
+  }
+  .input_tel {
+    width: 205px;
+  }
+  .dev {
+    width: 125px;
+    height: 31px;
+  }
+  textarea {
+    width: 355px;
+    height: 105px;
+  }
+  .Div_Botoes {
+    width: 388px;
+  }
+  button {
+    background: #1c799b;
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    width: 86px;
+    height: 40px;
+  }
+  .img_rodape img {
+    width: 390px;
+  }
+}
