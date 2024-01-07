@@ -8,8 +8,9 @@ const schema = z.object({
   nome: z.string().min(3, "Nome é obrigatório"),
   email: z
     .string()
-    .refine((value) => /\S+@\S+\.\S+/.test(value), {
-      message: "Insira um endereço de e-mail válido",
+    .refine((value) => /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(value), {
+      message:
+        "O endereço de e-mail não pode conter letras maiúsculas ou espaços",
     })
     .refine((value) => value.trim().length > 0, {
       message: "E-mail é obrigatório",
@@ -27,6 +28,7 @@ const Form = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({ resolver: zodResolver(schema) });
 
@@ -42,6 +44,7 @@ const Form = () => {
         popup: styles["alert"],
       },
     });
+    reset();
   };
 
   return (
