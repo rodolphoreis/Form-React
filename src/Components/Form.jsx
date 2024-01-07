@@ -30,22 +30,18 @@ const Form = () => {
     formState: { errors },
   } = useForm({ resolver: zodResolver(schema) });
 
-  const createUser = async (data) => {
+  const createUser = (data) => {
     console.log(data);
-    try {
-      Swal.fire({
-        title: "Formulário Enviado",
-        text: "Obrigado por preencher o formulário de candidatura! Apreciamos o seu interesse e entraremos em contato em breve.",
-        icon: "success",
-        confirmButtonColor: "#3085d6",
-        confirmButtonText: "Fechar",
-        customClass: {
-          popup: styles["alert"],
-        },
-      });
-    } catch (error) {
-      console.error("Erro no envio do formulário", error);
-    }
+    Swal.fire({
+      title: "Formulário Enviado",
+      text: "Obrigado por preencher o formulário de candidatura! Apreciamos o seu interesse e entraremos em contato em breve.",
+      icon: "success",
+      confirmButtonColor: "#3085d6",
+      confirmButtonText: "Fechar",
+      customClass: {
+        popup: styles["alert"],
+      },
+    });
   };
 
   return (
