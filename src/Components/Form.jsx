@@ -3,6 +3,7 @@ import styles from "./Form.module.css";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 
 const schema = z.object({
   nome: z.string().min(3, "Nome é obrigatório"),
@@ -15,12 +16,12 @@ const schema = z.object({
     .refine((value) => value.trim().length > 0, {
       message: "E-mail é obrigatório",
     }),
-  data_de_nascimento: z.string().refine((data) => data.length >= 10, {
+  dataDeAniversario: z.string().refine((data) => data.length >= 10, {
     message: "Data de nascimento é obrigatória",
   }),
   morada: z.string().min(6, "Morada é obrigatório"),
   telefone: z.string().min(10, "Telefone deve conter no mínimo 9 dígitos"),
-  desenvolvedor: z.string().min(3, "Desenvolvedor é obrigatório"),
+  stack: z.string().min(3, "Desenvolvedor é obrigatório"),
   sobre: z.string().min(10, "Campo obrigatório"),
 });
 
@@ -32,8 +33,13 @@ const Form = () => {
     formState: { errors },
   } = useForm({ resolver: zodResolver(schema) });
 
+  async function sendData(payload) {
+    const res = await axios.post("http://localhost:3000/usuarios", payload);
+    console.log(res.status);
+  }
+
   const createUser = (data) => {
-    console.log(data);
+    sendData(data);
     Swal.fire({
       title: "Formulário Enviado",
       text: "Obrigado por preencher o formulário de candidatura! Apreciamos o seu interesse e entraremos em contato em breve.",
@@ -91,13 +97,13 @@ const Form = () => {
             <input
               type="date"
               className={styles.age}
-              {...register("data_de_nascimento")}
+              {...register("dataDeAniversario")}
               required
             />
             <span
               style={{ color: "red", fontSize: "12px", marginTop: "-10px" }}
             >
-              {errors.data_de_nascimento?.message}
+              {errors.dataDeAniversario?.message}
             </span>
           </label>
         </div>
@@ -129,12 +135,8 @@ const Form = () => {
             </span>
           </label>
           <label>
-            <span>Desenvolvedor</span>
-            <select
-              name="Front"
-              className={styles.dev}
-              {...register("desenvolvedor")}
-            >
+            <span>Stack</span>
+            <select name="Front" className={styles.dev} {...register("stack")}>
               <option value="Front">Front-end</option>
               <option value="Back">Back-end</option>
               <option value="Mobile">Mobile</option>
@@ -142,7 +144,7 @@ const Form = () => {
             <span
               style={{ color: "red", fontSize: "12px", marginTop: "-10px" }}
             >
-              {errors.desenvolvedor?.message}
+              {errors.stack?.message}
             </span>
           </label>
         </div>
