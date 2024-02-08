@@ -69,6 +69,8 @@ const Form = () => {
             type="text"
             className={styles.input_nome}
             {...register("nome")}
+            name="nome"
+            autoComplete="nome"
             required
           />
           <span style={{ color: "red", fontSize: "12px", marginTop: "-10px" }}>
@@ -83,6 +85,8 @@ const Form = () => {
               type="text"
               className={styles.input_email}
               {...register("email")}
+              name="email"
+              autoComplete="email"
               required
             />
             <span
@@ -98,6 +102,8 @@ const Form = () => {
               type="date"
               className={styles.age}
               {...register("dataDeAniversario")}
+              name="dataDeAniversario"
+              autoComplete="dataDeAniversario"
               required
             />
             <span
@@ -113,6 +119,8 @@ const Form = () => {
             type="text"
             className={styles.morada}
             {...register("morada")}
+            name="morada"
+            autoComplete="morada"
             required
           />
           <span style={{ color: "red", fontSize: "12px", marginTop: "-10px" }}>
@@ -126,6 +134,8 @@ const Form = () => {
               type="number"
               className={styles.input_tel}
               {...register("telefone")}
+              name="telefone"
+              autoComplete="telefone"
               required
             />
             <span
@@ -150,7 +160,12 @@ const Form = () => {
         </div>
         <label>
           <span>Fale sobre você</span>
-          <textarea name="sobre" {...register("sobre")} required></textarea>
+          <textarea
+            name="sobre"
+            {...register("sobre")}
+            autoComplete="sobre"
+            required
+          ></textarea>
           <span style={{ color: "red", fontSize: "12px", marginTop: "-10px" }}>
             {errors.sobre?.message}
           </span>
