@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ## Formulário React Descomplicado 
 
 
